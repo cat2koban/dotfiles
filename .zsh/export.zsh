@@ -6,7 +6,7 @@ export PATH=/opt/homebrew/bin:/sbin:/bin:/usr/bin:/usr/texbin:$PATH
 export PATH="$HOME/.plenv/bin:$PATH"
 eval "$(plenv init -)"
 PATH=~/.plenv/shims:$PATH
-#export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 export PERL_CPANM_OPT="--local-lib=~/perl5"
 export PATH=$HOME/perl5/bin:$PATH;
 export PERL5LIB=$HOME/perl5/lib/perl5:$PERL5LIB;
@@ -16,6 +16,7 @@ export PATH="/usr/local/bin:$PATH"
 eval "$(rbenv init -)"
 export CLASSPATH=.:/usr/share/java/mysql-connector-java-8.0.11.jar
 export PATH="/usr/local/opt/node@10/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 
 # goenv の環境設定
 export GOENV_ROOT=$HOME/.goenv
