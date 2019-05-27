@@ -2,6 +2,7 @@ set number
 syntax on
 set background=dark
 let g:solarized_termcolors=256
+set backspace=indent,eol,start
 
 " cusorline
 set cursorline
