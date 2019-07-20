@@ -18,10 +18,13 @@ export CLASSPATH=.:/usr/share/java/mysql-connector-java-8.0.11.jar
 export PATH="/usr/local/opt/node@10/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
+# mysql@5.7 の設定
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
 # goenv の環境設定
-export GOENV_ROOT=$HOME/.goenv
-export PATH=$GOENV_ROOT/bin:$PATH
-eval "$(goenv init -)"
+#export GOENV_ROOT=$HOME/.goenv
+#export PATH=$GOENV_ROOT/bin:$PATH
+#eval "$(goenv init -)"
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin

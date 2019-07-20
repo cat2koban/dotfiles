@@ -12,3 +12,5 @@ do
 
     ln -snfv "$f" "$HOME"
 done
+
+exec $SHELL
