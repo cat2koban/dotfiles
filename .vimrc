@@ -29,6 +29,7 @@ set laststatus=2
 set mouse=a
 
 inoremap jj <ESC>
+nnoremap <silent> <C-e> :NERDTreeToggle<CR>
 
 if filereadable(expand('~/.deinrc'))
   source ~/.deinrc
