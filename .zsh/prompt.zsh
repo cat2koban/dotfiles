@@ -17,5 +17,5 @@ zstyle ':vcs_info:*' actionformats "%F{cyan}$branch %b|%a %f"
 precmd() {
     vcs_info
     _make_prompt PROMPT
-    # PROMPT="%n@%m%  %F{red}[%f%~%F{red}]%f %# "
+    # PROMPT="%n@%m%  %F{red}[%f%~%F{red}]%f %#"
 }

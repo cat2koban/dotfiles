@@ -1,15 +1,14 @@
+" Grobal 
+" --------------------------------------
 set number
 syntax on
 set background=dark
 let g:solarized_termcolors=256
 set backspace=indent,eol,start
-
 " cusorline
 set cursorline
-
-"tab
+" tab
 set tabstop=4
-
 " search
 set incsearch
 set ignorecase
@@ -22,18 +21,21 @@ set autoindent
 " コマンド補完
 set wildmenu
 set history=500
-
 set laststatus=2
-
 "マウスのホイール機能の有効化
 set mouse=a
 
+" alias for vim
 inoremap jj <ESC>
+
+" NerdTree 
 nnoremap <silent> <C-e> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 if filereadable(expand('~/.deinrc'))
   source ~/.deinrc
 endif
+
 
 let g:lightline = {
         \ 'colorscheme': 'wombat',
