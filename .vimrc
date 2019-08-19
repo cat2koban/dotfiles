@@ -5,11 +5,11 @@ syntax on
 set background=dark
 let g:solarized_termcolors=256
 set backspace=indent,eol,start
-" cusorline
 set cursorline
-" tab
-set tabstop=4
-" search
+set tabstop=2
+
+" Search
+" --------------------------------------
 set incsearch
 set ignorecase
 set smartcase
