@@ -6,3 +6,4 @@ autoload -Uz colors; colors
 
 autoload -U compinit; compinit
 
+bindkey -e

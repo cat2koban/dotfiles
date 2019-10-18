@@ -5,7 +5,7 @@ alias vim='/usr/local/bin/vim'
 
 # cd
 alias dot='cd $HOME/workspace/dotfiles'
-alias rt='cd $HOME/workspace/ruby/rails_tutorial/environment/sample_app/'
+alias work='cd $HOME/workspace'
 
 # git
 alias gis='git status'

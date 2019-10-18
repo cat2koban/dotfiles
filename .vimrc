@@ -2,11 +2,10 @@
 " --------------------------------------
 set number
 syntax on
-set background=dark
-let g:solarized_termcolors=256
 set backspace=indent,eol,start
 set cursorline
 set tabstop=2
+set relativenumber
 
 " Search
 " --------------------------------------
@@ -38,22 +37,22 @@ endif
 
 
 let g:lightline = {
-        \ 'colorscheme': 'wombat',
-        \ 'mode_map': {'c': 'NORMAL'},
-        \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
-        \ },
-        \ 'component_function': {
-        \   'modified': 'LightlineModified',
-        \   'readonly': 'LightlineReadonly',
-        \   'fugitive': 'LightlineFugitive',
-        \   'filename': 'LightlineFilename',
-        \   'fileformat': 'LightlineFileformat',
-        \   'filetype': 'LightlineFiletype',
-        \   'fileencoding': 'LightlineFileencoding',
-        \   'mode': 'LightlineMode'
-        \ }
-        \ }
+												\ 'colorscheme': 'wombat',
+        								\ 'mode_map': {'c': 'NORMAL'},
+        								\ 'active': {
+        								\   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+        								\ },
+        								\ 'component_function': {
+        								\   'modified': 'LightlineModified',
+        								\   'readonly': 'LightlineReadonly',
+        								\   'fugitive': 'LightlineFugitive',
+        								\   'filename': 'LightlineFilename',
+        								\   'fileformat': 'LightlineFileformat',
+        								\   'filetype': 'LightlineFiletype',
+        								\   'fileencoding': 'LightlineFileencoding',
+        								\   'mode': 'LightlineMode'
+												\ }
+      									\   }
 
 function! LightlineModified()
   return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'

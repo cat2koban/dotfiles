@@ -21,13 +21,10 @@ export PATH="/usr/local/sbin:$PATH"
 # mysql@5.7 の設定
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
-# goenv の環境設定
-#export GOENV_ROOT=$HOME/.goenv
-#export PATH=$GOENV_ROOT/bin:$PATH
-#eval "$(goenv init -)"
-
+# GOPATH 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+
 
 # cmd [ls] の色設定
 export LSCOLORS=cxfxcxdxbxegedabagacad
@@ -35,3 +32,13 @@ export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46
 
 # zplug (zsh plugin manager)
 export ZPLUG_HOME=~/.zplug
+
+# nodenv
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
+
+# direnv
+export EDITOR='vim'
+eval "$(direnv hook zsh)"
+
+export GPG_TTY=$(tty)
