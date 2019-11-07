@@ -4,6 +4,12 @@
 
 1. 最低限必要なものを用意
 
+- [ ] iTerm 
+
+  - https://github.com/anunez/one-dark-iterm こいつを Theme に適用
+
+	- 色の設定をちょい変更  https://github.com/zsh-users/zsh-autosuggestions/issues/416
+
 - [ ] brew
 
 ＊brew をインストール後に
