@@ -4,12 +4,11 @@ if &compatible
 endif
 
 " Required:
-set runtimepath^=/Users/cat2koban/.vim/bundle/repos/github.com/Shougo/dein.vim
+set runtimepath+=/Users/cat2koban/.cache/dein/repos/github.com/Shougo/dein.vim
 
-" Required:
-call dein#begin(expand('/Users/cat2koban/.vim/bundle'))
+call dein#begin('/Users/cat2koban/.cache/dein')
 
-call dein#add('Shougo/dein.vim')
+call dein#add('/Users/cat2koban/.cache/dein/repos/github.com/Shougo/dein.vim')
 
 call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet-snippets')
@@ -24,9 +23,6 @@ call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
 call dein#end()
 
-let g:onedark_termcolors=16
-colorscheme onedark
-
 " Required:
 filetype plugin indent on
 
@@ -36,4 +32,3 @@ if dein#check_install()
 endif
 
 "End dein Scripts-------------------------
-
