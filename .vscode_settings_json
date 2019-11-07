@@ -10,28 +10,7 @@
   "files.trimTrailingWhitespace": true,
 
   "editor.renderControlCharacters": true,
-  "go.gopath": "/Users/cat2koban/go",
-  "go.formatOnSave": true,
-  "sshfs.configs": [
-      {
-          "label": "Ubuntu",
-          "root": "/home/noritomo",
-          "host": "192.168.56.50",
-          "port": 22,
-          "username": "noritomo",
-          "password": true,
-          "name": "Ubuntu"
-      },
-      {
-          "label": "Ubuntu",
-          "root": "/home/noritomo",
-          "host": "192.168.56.50",
-          "port": 22,
-          "username": "noritomo",
-          "password": true,
-          "name": "ubuntu"
-      }
-  ],
+
   "terminal.explorerKind": "external",
   "terminal.external.osxExec": "iTerm.app",
   "editor.minimap.enabled": false,
