@@ -1,7 +1,7 @@
 alias rm='rm -i'
 alias ls='ls -aG -F'
-#alias vi='/usr/local/bin/vim'
-#alias vim='/usr/local/bin/vim'
+alias vi='/usr/local/bin/nvim'
+alias vim='/usr/local/bin/nvim'
 
 # cd
 alias dot='cd $HOME/workspace/dotfiles'
