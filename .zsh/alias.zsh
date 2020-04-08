@@ -5,10 +5,10 @@ alias vim='/usr/local/bin/vim'
 
 # cd
 alias dot='cd $HOME/workspace/dotfiles'
-alias work='cd $HOME/workspace'
 
 # git
 alias gis='git status'
 alias gic='git commit'
 alias gif='git diff'
-alias gil='git log --oneline --graph'
+alias gilo='git log --oneline'
+alias gilog='git log --oneline --graph'

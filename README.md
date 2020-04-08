@@ -6,19 +6,11 @@
 
 - [ ] brew
 
-＊brew をインストール後に
+- [ ] nvim
 
-- [ ] git
-
-- [ ] zsh
-
-- [ ] vim
-
-2. 公式を参考に以下を用意
-
-- [ ] zplug
-
-- [ ] dein
+2. pure を用意 (curl -O のやり方でインストールしたら楽)
 
 3. ./install.sh
 
+## TODO
+将来的に `./install.sh` とするだけで、最低限 nvim と pure の設定だけ終わるようなのを master branch におきたい。
