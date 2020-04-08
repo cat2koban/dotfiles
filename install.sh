@@ -2,7 +2,6 @@
 
 DOTPATH=$(pwd)/
 
-
 for f in ${DOTPATH}.[a-z]*
 do
 	if [[ $f =~ .git ]] ;
