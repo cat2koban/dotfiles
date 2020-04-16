@@ -1,0 +1,14 @@
+[user]
+  name = Noritomo Taba
+  email = cat2koban@users.noreply.github.com
+	signingkey = FA15F572A2DB76CE
+
+[core]
+  editor = vim -c \"set fenc=utf-8\"
+  excludesfile = ~/.gitignore_global
+
+[ghq]
+  root = ~/ghq
+
+[commit]
+	gpgsign = true

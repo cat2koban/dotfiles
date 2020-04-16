@@ -1,3 +1,19 @@
+" プラグイン ---------------------------------------------------
+
+" ~/.vim/plugged にプラグインを配置
+call plug#begin('~/.vim/plugged')
+
+" 何のプラグインを使うか書いていく
+Plug 'itchyny/lightline.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'scrooloose/nerdtree'
+Plug 'nathanaelkane/vim-indent-guides'
+
+" - ここまで -
+call plug#end()
+
+
+" 基本設定 ------------------------------------------------------
 " 文字コード
 set encoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
@@ -30,7 +46,6 @@ set smarttab
 
 " インデント
 set smartindent
-set autoindent
 
 " Undo / Redo 履歴の保存
 if has('persistent_undo')
@@ -39,13 +54,14 @@ if has('persistent_undo')
 	set undofile
 endif
 
-" マップ / 再帰なし
+" マッピング / 再帰なし
 inoremap <silent> jj <ESC>
 
-" マップ / 再帰
-nnoremap <C-a> 0
-nnoremap <C-e> $
+" マッピング / 再帰
 nnoremap <ESC><ESC> :nohlsearch<CR>
+
+" <Leader> の設定
+let mapleader = ","
 
 " ヤンクしたものをクリップボードに
 set clipboard+=unnamed
@@ -68,4 +84,17 @@ set wildmenu
 " マウス
 set mouse=a
 
-" プラグイン -----------------------------
+" NERDTree プラグイン用の設定
+nnoremap <silent> <C-e> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
+
+" インデント可視化
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_enable_on_vim_startup = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green  ctermbg=4
+
+
+
+
