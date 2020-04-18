@@ -8,6 +8,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'previm/previm'
 
 " - ここまで -
 call plug#end()
@@ -95,6 +96,5 @@ let g:indent_guides_enable_on_vim_startup = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green  ctermbg=4
 
-
-
-
+" Previm
+let g:previm_open_cmd = 'open -a Google\ Chrome'

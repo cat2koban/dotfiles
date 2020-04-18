@@ -1,5 +1,5 @@
 [user]
-  name = Noritomo Taba
+	name = Noritomo Taba
   email = cat2koban@users.noreply.github.com
 	signingkey = FA15F572A2DB76CE
 
@@ -12,3 +12,5 @@
 
 [commit]
 	gpgsign = true
+[gpg]
+	program = gpg
