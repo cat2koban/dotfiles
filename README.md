@@ -51,7 +51,7 @@ TODO: Full Automation...
 
 ## Setup
 - `$ ghq get cat2koban/dotfiles`
-- Ctrl+r > cat2koba/dotfiles
+- Ctrl+g> cat2koba/dotfiles
 - `./setup.sh`
 
 
