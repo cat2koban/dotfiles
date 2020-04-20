@@ -1,4 +1,5 @@
 " プラグイン ---------------------------------------------------
+"
 
 " ~/.vim/plugged にプラグインを配置
 call plug#begin('~/.vim/plugged')
@@ -9,6 +10,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'previm/previm'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " - ここまで -
 call plug#end()
