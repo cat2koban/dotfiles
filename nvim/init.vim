@@ -1,7 +1,15 @@
-" プラグイン ---------------------------------------------------
+" プラグインの追加/削除 ----------------------------------------
+" ~/.vim/plugged にプラグインを配置される
 "
+" インストール後 に以下のコマンドを terminal mode から実行
+" source ~/.config/nvim/init.vim 
+" :PlugInstall
+"
+" プラグインの削除の際は
+" Plug 'cat2koban/awesome-plug.vim' を削除して、
+" source ~/.config/nvim/init.vim
+" :PlugClean 
 
-" ~/.vim/plugged にプラグインを配置
 call plug#begin('~/.vim/plugged')
 
 " 何のプラグインを使うか書いていく
@@ -12,35 +20,33 @@ Plug 'previm/previm'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" - ここまで -
 call plug#end()
 
-
 " 基本設定 ------------------------------------------------------
-" 文字コード
+"" 文字コード
 set encoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 
-" シンタックスを有効に
+"" シンタックスを有効に
 syntax enable
 
-" Ctrl-h で delete
+"" Ctrl-h で delete
 set backspace=2
 
-" カーソルライン
+"" カーソルライン
 set cursorline
 
-" 行番号
+"" 行番号
 set number
 set relativenumber
 
-" 検索
+"" 検索
 set hlsearch
 set ignorecase
 set smartcase
 set incsearch
 
-" タブ
+"" タブ
 set expandtab
 set tabstop=2
 set softtabstop=2
@@ -88,15 +94,20 @@ set wildmenu
 " マウス
 set mouse=a
 
-" NERDTree プラグイン用の設定
+
+" ---------------------------------------------------------------
+" プラグイン固有の設定                                        {{{
+" ---------------------------------------------------------------
+
+
+" NERDTree ------------------------------------------------------
 nnoremap <silent> <C-e> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
-" Previm
+" Previm --------------------------------------------------------
 let g:previm_open_cmd = 'open -a Google\ Chrome'
 
-
-" CoC プラグイン用の設定
+" coc.nvim ------------------------------------------------------
 " TextEdit might fail if hidden is not set.
 set hidden
 
@@ -237,3 +248,7 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+" ---------------------------------------------------------------
+" }}}                                        プラグイン固有の設定
+" ---------------------------------------------------------------
