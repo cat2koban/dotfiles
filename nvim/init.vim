@@ -1,7 +1,7 @@
 " プラグインの追加/削除 ----------------------------------------
 " ~/.vim/plugged にプラグインを配置される
 "
-" インストール後 に以下のコマンドを terminal mode から実行
+" インストール後 に以下のコマンドを command line mode から実行
 " source ~/.config/nvim/init.vim
 " :PlugInstall
 "
