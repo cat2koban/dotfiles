@@ -20,6 +20,8 @@ Plug 'previm/previm'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-endwise'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
@@ -30,6 +32,7 @@ call plug#end()
 "" 文字コード
 set encoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
+set fileformats=unix,dos,mac
 
 
 "" シンタックスを有効に
