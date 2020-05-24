@@ -16,12 +16,17 @@ call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
-Plug 'previm/previm'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 Plug 'tpope/vim-endwise'
 Plug 'nathanaelkane/vim-indent-guides'
+
 Plug 'junegunn/goyo.vim'
+Plug 'previm/previm'
+
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 
 call plug#end()
 
@@ -134,6 +139,7 @@ autocmd BufWritePre * :%s/\s\+$//ge
 " ---------------------------------------------------------------
 nnoremap <silent> <C-e> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
+let g:NERDTreeIgnore=['\.git$', '\.clean$', '\.swp$', '\.bak$', '\~$']
 
 
 " ---------------------------------------------------------------
@@ -169,6 +175,12 @@ set signcolumn=yes
 " navigate completion list
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+
+" ---------------------------------------------------------------
+" >> deoplete.nvim
+" ---------------------------------------------------------------
+let g:deoplete#enable_at_startup = 1
 
 
 " ---------------------------------------------------------------
