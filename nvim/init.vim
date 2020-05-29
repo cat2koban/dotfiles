@@ -13,17 +13,25 @@
 call plug#begin('~/.vim/plugged')
 
 " 何のプラグインを使うか書いていく
+" display  ----------------------------
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'nathanaelkane/vim-indent-guides'
+
+" markdow -----------------------------
 Plug 'junegunn/goyo.vim'
 Plug 'previm/previm'
 
+" coding ------------------------------
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
+
+" fuzzy finder ------------------------
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
