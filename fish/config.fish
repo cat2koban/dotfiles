@@ -2,6 +2,7 @@
 ## regular commands
 alias ls='ls -aG -F'
 alias rm='rm -i'
+alias ..='cd ..'
 
 ## git
 alias gis='git status'
@@ -30,7 +31,7 @@ alias bers='be rspec'
 alias berc='be rubocop'
 alias berca='be rubocop -a'
 
-# fish-ghq / fzf 
+# fish-ghq / fzf
 set -g GHQ_SELECTOR_OPTS "--no-sort --reverse --ansi --color bg+:13,hl:3,pointer:7"
 
 # direnv
