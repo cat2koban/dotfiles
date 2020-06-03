@@ -28,6 +28,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'w0rp/ale'
 
 " fuzzy finder ------------------------
 Plug '/usr/local/opt/fzf'
