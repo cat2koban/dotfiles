@@ -1,7 +1,9 @@
 adns
 autoconf
+boxes
 cairo
 direnv
+figlet
 fish
 fontconfig
 fontforge
@@ -47,6 +49,7 @@ lzo
 msgpack
 mutagen
 mysql@5.7
+ncurses
 neovim
 nettle
 npth
@@ -64,12 +67,15 @@ python
 python@3.8
 rbenv
 readline
+redis
 ripgrep
 ruby-build
 sqlite
 the_silver_searcher
 tig
+tmux
 tree
 unbound
 unibilium
+utf8proc
 xz
