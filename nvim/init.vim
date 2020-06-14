@@ -46,6 +46,14 @@ call plug#end()
 set encoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 set fileformats=unix,dos,mac
+set binary noeol
+
+
+"" 行末スペース
+autocmd BufWritePre * :%s/\s\+$//ge
+
+
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
 
 "" シンタックスを有効に
