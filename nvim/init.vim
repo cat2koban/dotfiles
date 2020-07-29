@@ -161,6 +161,7 @@ autocmd BufWritePre * :%s/\s\+$//ge
 nnoremap <silent> <C-e> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let g:NERDTreeIgnore=['\.git$', '\.clean$', '\.swp$', '\.bak$', '\~$']
+let NERDTreeMapOpenInTab='<ENTER>'
 
 
 " ---------------------------------------------------------------
@@ -333,7 +334,10 @@ endif
 " ---------------------------------------------------------------
 " [$ vi ] と fish で入力すると, startify が起動
 " ref: https://github.com/mhinz/vim-startify/blob/master/doc/startify.txt#L309
-let g:startify_session_autoload = 0
+let g:startify_session_autoload = 1
+
+" Ctrl + S で :Startify を起動
+nnoremap <C-s> :Startify<CR>
 
 " ref: http://mewbies.com/acute_terminal_fun_01_get_ascii-fied_on_the_terminal.htm
 " ref: https://github.com/ascii-boxes/boxes/blob/master/boxes-config
@@ -360,6 +364,19 @@ let g:startify_custom_header = ([
 \'                            (_/                         ',
 \'',
 \])
+
+
+" ---------------------------------------------------------------
+" >> ale
+" ---------------------------------------------------------------
+let g:ale_fixers = { 'ruby': ['rubocop'] }
+let g:ale_set_highlights = 0
+
+
+" ---------------------------------------------------------------
+" >> fzf
+" ---------------------------------------------------------------
+nnoremap <C-g> :Rg<CR>
 
 
 " ---------------------------------------------------------------
