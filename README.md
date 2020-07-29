@@ -1,6 +1,6 @@
 # dotfiles
 
-## Requirements 
+## Requirements
 TODO: Full Automation...
 
 ### 1. Install brew
@@ -23,7 +23,7 @@ TODO: Full Automation...
   - `$ curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish`
   - https://github.com/jorgebucaran/fisher
 
-- [ ] fish-pure 
+- [ ] fish-pure
   - `$ fisher add rafaelrinaldi/pure`
   - https://github.com/rafaelrinaldi/pure
 
@@ -40,7 +40,7 @@ TODO: Full Automation...
 
 ### 3. Install Awesome Editor
 - [ ] nvim
-  - `$ brew install nvim` 
+  - `$ brew install nvim`
   - https://neovim.io/
 
 - [ ] vim-plug
@@ -51,7 +51,7 @@ TODO: Full Automation...
 
 ## Setup
 - `$ ghq get cat2koban/dotfiles`
-- Ctrl+g> cat2koba/dotfiles
+- Ctrl+g> cat2koban/dotfiles
 - `./setup.sh`
 
 
