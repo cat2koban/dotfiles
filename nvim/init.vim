@@ -20,17 +20,18 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mhinz/vim-startify'
 
-" markdow -----------------------------
+" markdown -----------------------------
 Plug 'junegunn/goyo.vim'
 Plug 'previm/previm'
 
 " coding ------------------------------
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Yggdroot/indentLine'
 Plug 'neoclide/coc.nvim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'w0rp/ale'
 Plug 'slim-template/vim-slim'
+Plug 'thinca/vim-quickrun'
 
 " fuzzy finder ------------------------
 Plug '/usr/local/opt/fzf'
@@ -47,8 +48,6 @@ set encoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 set fileformats=unix,dos,mac
 set binary noeol
-
-
 "" 行末スペース
 autocmd BufWritePre * :%s/\s\+$//ge
 
@@ -67,9 +66,6 @@ set backspace=2
 "" カーソルライン
 set cursorline
 
-
-"" 行の折り返し
-set nowrap
 
 "" 行番号
 set number
@@ -115,7 +111,7 @@ nnoremap <C-N> :tabnew<CR>
 
 
 " <Leader> の設定
-let mapleader = ","
+let mapleader = "\<Space>"
 
 
 " ヤンクしたものをクリップボードに
@@ -149,6 +145,11 @@ set mouse=a
 " 行末の空白を削除
 autocmd BufWritePre * :%s/\s\+$//ge
 
+" terminal mode のシェル
+set sh=fish
+
+" terminal mode -> command mode
+tnoremap <silent> <ESC> <C-\><C-n>
 
 " ---------------------------------------------------------------
 " プラグイン固有の設定                                        {{{
@@ -162,6 +163,8 @@ nnoremap <silent> <C-e> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let g:NERDTreeIgnore=['\.git$', '\.clean$', '\.swp$', '\.bak$', '\~$']
 let NERDTreeMapOpenInTab='<ENTER>'
+let NERDTreeShowLineNumbers=1
+autocmd FileType nerdtree setlocal relativenumber
 
 
 " ---------------------------------------------------------------
@@ -377,6 +380,14 @@ let g:ale_set_highlights = 0
 " >> fzf
 " ---------------------------------------------------------------
 nnoremap <C-g> :Rg<CR>
+
+
+
+" ---------------------------------------------------------------
+" >> fzf
+" ---------------------------------------------------------------
+nnoremap <C-q> :QuickRun<CR>
+
 
 
 " ---------------------------------------------------------------
