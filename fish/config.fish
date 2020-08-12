@@ -59,3 +59,6 @@ set -x GOENV_DISABLE_GOPATH 1
 goenv init - | source
 set -x GOPATH $HOME/go
 set -x PATH $PATH $GOPATH/bin
+
+# bin
+set -x PATH ~/bin/ $PATH
