@@ -33,6 +33,10 @@ Plug 'w0rp/ale'
 Plug 'slim-template/vim-slim'
 Plug 'thinca/vim-quickrun'
 
+" git ---------------------------------
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
 " fuzzy finder ------------------------
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
