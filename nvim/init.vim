@@ -19,6 +19,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mhinz/vim-startify'
+Plug 'itchyny/calendar.vim'
 
 " markdown -----------------------------
 Plug 'junegunn/goyo.vim'
@@ -32,6 +33,7 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'w0rp/ale'
 Plug 'slim-template/vim-slim'
 Plug 'thinca/vim-quickrun'
+Plug 'dhruvasagar/vim-table-mode'
 
 " git ---------------------------------
 Plug 'tpope/vim-fugitive'
@@ -73,7 +75,7 @@ set cursorline
 
 "" 行番号
 set number
-"set relativenumber
+set relativenumber
 
 
 "" 検索
@@ -113,10 +115,7 @@ nnoremap <C-H> :tabprevious<CR>
 nnoremap <C-L> :tabnext<CR>
 nnoremap <C-N> :tabnew<CR>
 nnoremap <Leader>w :w<CR>
-nnoremap <Leader>r :QuickRun<CR>
-" vim-quickrun のウィンドウを削除するために
-" 現在カーソルのあるウィンドウ以外を全て閉じるとしている
-nnoremap <Leader>R :only<CR>
+nnoremap <Leader>w :w<CR>
 
 
 " <Leader> の設定
@@ -154,14 +153,11 @@ set mouse=a
 " 行末の空白を削除
 autocmd BufWritePre * :%s/\s\+$//ge
 
-
 " terminal mode のシェル
 set sh=fish
 
-
 " terminal mode -> command mode
 tnoremap <silent> <ESC> <C-\><C-n>
-
 
 " ---------------------------------------------------------------
 " プラグイン固有の設定                                        {{{
@@ -208,6 +204,58 @@ set shortmess+=c
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 set signcolumn=yes
+
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+"Or use `complete_info` if your vim support it, like:
+" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Add status line support, for integration with other plugin, checkout `:h coc-status`
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Using CocList
+" Show all diagnostics
 
 " ---------------------------------------------------------------
 " >> neo-snippet.nvim
@@ -281,6 +329,7 @@ let g:ale_set_highlights = 0
 " >> fzf
 " ---------------------------------------------------------------
 nnoremap <C-g> :Rg<CR>
+
 
 
 " ---------------------------------------------------------------
