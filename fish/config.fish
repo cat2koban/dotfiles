@@ -1,7 +1,9 @@
+# 気が向いたらまたつけよう
+#
 # hello fish-shell
-function fish_greeting
-  fortune | cowsay -f ghostbusters --aurora --bold
-end
+#function fish_greeting
+#  fortune | cowsay -f ghostbusters --aurora --bold
+#end
 
 # alias
 ## regular commands
@@ -62,3 +64,7 @@ set -x PATH $PATH $GOPATH/bin
 
 # bin
 set -x PATH ~/bin/ $PATH
+
+set -g pure_symbol_prompt (set_color green)'('(set_color red)'๑'(set_color white)' °口°'(set_color red)'๑'(set_color green)')' (set_color white)'{ '
+#set -g pure_color_git_branch yellow
+set -g pure_color_git_branch magenta

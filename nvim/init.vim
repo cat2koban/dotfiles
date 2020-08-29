@@ -287,6 +287,7 @@ endif
 " [$ vi ] と fish で入力すると, startify が起動
 " ref: https://github.com/mhinz/vim-startify/blob/master/doc/startify.txt#L309
 let g:startify_session_autoload = 1
+let g:indentLine_fileTypeExclude = ['help', 'nerdtree', 'startify']
 
 " Ctrl + S で :Startify を起動
 nnoremap <C-s> :Startify<CR>
