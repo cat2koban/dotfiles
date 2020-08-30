@@ -34,6 +34,7 @@ Plug 'w0rp/ale'
 Plug 'slim-template/vim-slim'
 Plug 'thinca/vim-quickrun'
 Plug 'dhruvasagar/vim-table-mode'
+Plug 'jiangmiao/auto-pairs'
 
 " git ---------------------------------
 Plug 'tpope/vim-fugitive'
@@ -287,7 +288,6 @@ endif
 " [$ vi ] と fish で入力すると, startify が起動
 " ref: https://github.com/mhinz/vim-startify/blob/master/doc/startify.txt#L309
 let g:startify_session_autoload = 1
-let g:indentLine_fileTypeExclude = ['help', 'nerdtree', 'startify']
 
 " Ctrl + S で :Startify を起動
 nnoremap <C-s> :Startify<CR>
@@ -331,6 +331,11 @@ let g:ale_set_highlights = 0
 " ---------------------------------------------------------------
 nnoremap <C-g> :Rg<CR>
 
+
+" ---------------------------------------------------------------
+" >> indentLine
+" ---------------------------------------------------------------
+let g:indentLine_fileTypeExclude = ['help', 'nerdtree', 'startify']
 
 
 " ---------------------------------------------------------------
