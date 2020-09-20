@@ -14,6 +14,8 @@ alias ..='cd ..'
 ## git
 alias gis='git status'
 alias gif='git diff'
+alias gil='git log --oneline'
+alias gc='git checkout'
 
 ## nvim
 alias vi='nvim'
@@ -66,5 +68,4 @@ set -x PATH $PATH $GOPATH/bin
 set -x PATH ~/bin/ $PATH
 
 set -g pure_symbol_prompt (set_color green)'('(set_color red)'๑'(set_color white)' °口°'(set_color red)'๑'(set_color green)')' (set_color white)'{ '
-#set -g pure_color_git_branch yellow
 set -g pure_color_git_branch magenta
