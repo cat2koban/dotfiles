@@ -58,12 +58,12 @@ set binary noeol
 "" 行末スペース
 autocmd BufWritePre * :%s/\s\+$//ge
 
-
-set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
-
+set list
+set listchars=tab:␣.,trail:›,extends:>,precedes:<
 
 "" シンタックスを有効に
-syntax enable
+syntax on
+autocmd FileType markdown hi! def link markdownItalic Normal
 
 
 "" Ctrl-h で delete

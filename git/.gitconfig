@@ -1,17 +1,30 @@
 [user]
-	name = cat2koban
-	email = cat2koban@users.noreply.github.com
-	signingkey = FA15F572A2DB76CE
+  name = cat2koban
+  email = cat2koban@users.noreply.github.com
+  signingkey = FA15F572A2DB76CE
 
 [core]
   editor = vim -c \"set fenc=utf-8\"
   excludesfile = ~/.gitignore_global
+  pager = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  features = side-by-side line-numbers decorations
+  whitespace-error-style = 22 reverse
+
+[delta "decorations"]
+  commit-decoration-style = bold yellow box ul
+  file-style = bold yellow ul
+  file-decoration-style = none
 
 [ghq]
   root = ~/ghq
 
 [commit]
-	gpgsign = true
+  gpgsign = true
 
 [gpg]
-	program = gpg
+  program = gpg

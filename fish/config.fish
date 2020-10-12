@@ -5,6 +5,9 @@
 #  fortune | cowsay -f ghostbusters --aurora --bold
 #end
 
+# lang
+set -x LANG en_US.UTF-8
+
 # alias
 ## regular commands
 alias ls='ls -aG -F'
