@@ -21,7 +21,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mhinz/vim-startify'
 Plug 'itchyny/calendar.vim'
 
-" markdown -----------------------------
+" markdown ----------------------------
 Plug 'junegunn/goyo.vim'
 Plug 'previm/previm'
 
@@ -35,6 +35,7 @@ Plug 'slim-template/vim-slim'
 Plug 'thinca/vim-quickrun'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-rails'
 
 " git ---------------------------------
 Plug 'tpope/vim-fugitive'
@@ -58,8 +59,8 @@ set binary noeol
 "" 行末スペース
 autocmd BufWritePre * :%s/\s\+$//ge
 
-set list
-set listchars=tab:␣.,trail:›,extends:>,precedes:<
+"set list
+"set listchars=tab:␣.,trail:›,extends:>,precedes:<
 
 "" シンタックスを有効に
 syntax on
@@ -76,7 +77,7 @@ set cursorline
 
 "" 行番号
 set number
-set relativenumber
+"""set relativenumber
 
 
 "" 検索
@@ -330,12 +331,14 @@ let g:ale_set_highlights = 0
 " >> fzf
 " ---------------------------------------------------------------
 nnoremap <C-g> :Rg<CR>
+nnoremap <C-F> :Files<CR>
 
 
 " ---------------------------------------------------------------
 " >> indentLine
 " ---------------------------------------------------------------
 let g:indentLine_fileTypeExclude = ['help', 'nerdtree', 'startify']
+
 
 
 " ---------------------------------------------------------------
