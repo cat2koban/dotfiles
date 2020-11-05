@@ -18,7 +18,7 @@ alias ..='cd ..'
 alias gis='git status'
 alias gif='git diff'
 alias gil='git log --oneline'
-alias gc='git checkout'
+alias gs='git switch'
 
 ## nvim
 alias vi='nvim'
