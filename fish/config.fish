@@ -19,6 +19,7 @@ alias gis='git status'
 alias gif='git diff'
 alias gil='git log --oneline'
 alias gs='git switch'
+alias todaycommits='git today | pbcopy'
 
 ## nvim
 alias vi='nvim'

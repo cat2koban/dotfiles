@@ -27,23 +27,26 @@ Plug 'previm/previm'
 
 " coding ------------------------------
 Plug 'Yggdroot/indentLine'
-Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'w0rp/ale'
 Plug 'slim-template/vim-slim'
 Plug 'thinca/vim-quickrun'
 Plug 'dhruvasagar/vim-table-mode'
-Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-rails'
+Plug 'mattn/webapi-vim'
+Plug 'upamune/esa.vim'
 
 " git ---------------------------------
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'vim-jp/vital.vim'
 
 " fuzzy finder ------------------------
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'cat2koban/ghlink.vim'
 
 call plug#end()
 
@@ -118,6 +121,7 @@ nnoremap <C-L> :tabnext<CR>
 nnoremap <C-N> :tabnew<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>w :w<CR>
+nnoremap <Leader>o :only<CR>
 
 
 " <Leader> の設定
@@ -330,8 +334,7 @@ let g:ale_set_highlights = 0
 " ---------------------------------------------------------------
 " >> fzf
 " ---------------------------------------------------------------
-nnoremap <C-g> :Rg<CR>
-nnoremap <C-F> :Files<CR>
+nnoremap <C-F> :FZF<CR>
 
 
 " ---------------------------------------------------------------
@@ -344,3 +347,4 @@ let g:indentLine_fileTypeExclude = ['help', 'nerdtree', 'startify']
 " ---------------------------------------------------------------
 " プラグイン固有の設定                                        }}}
 " ---------------------------------------------------------------
+"
