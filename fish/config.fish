@@ -18,7 +18,7 @@ alias ..='cd ..'
 alias gis='git status'
 alias gif='git diff'
 alias gil='git log --oneline'
-alias gs='git switch'
+alias gitch='git switch'
 alias todaycommits='git today | pbcopy'
 
 ## nvim
@@ -73,3 +73,6 @@ set -x PATH ~/bin/ $PATH
 
 set -g pure_symbol_prompt (set_color green)'('(set_color red)'๑'(set_color white)' °口°'(set_color red)'๑'(set_color green)')' (set_color white)'{ '
 set -g pure_color_git_branch magenta
+
+## gh cli
+eval (gh completion -s fish| source)
