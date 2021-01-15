@@ -1,7 +1,7 @@
 [user]
   name = cat2koban
   email = cat2koban@users.noreply.github.com
-  signingkey = FA15F572A2DB76CE
+	signingkey = B06E34830DE87629
 
 [core]
   editor = vim -c \"set fenc=utf-8\"
