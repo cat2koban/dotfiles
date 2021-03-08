@@ -1,6 +1,10 @@
 export PATH=/opt/homebrew/bin:$PATH
+
+# go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+export GO111MODULE=off
+export GOBIN="$GOPATH/bin"
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
