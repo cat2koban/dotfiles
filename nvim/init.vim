@@ -37,6 +37,7 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'tpope/vim-rails'
 Plug 'mattn/webapi-vim'
 Plug 'upamune/esa.vim'
+Plug 'mattn/vim-goimports'
 
 " git ---------------------------------
 Plug 'tpope/vim-fugitive'
