@@ -42,3 +42,9 @@
                --author=\"$(git config user.name)\" \
                --format=\" - %C(auto)%h%Creset : %s %C(green)(%ad)%Creset\";\
            };f"
+
+[github]
+  user = cat2koban
+
+[url "git@github.com:"]
+    insteadOf = https://github.com/
