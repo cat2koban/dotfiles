@@ -1,173 +1,128 @@
-" プラグインの追加/削除 ----------------------------------------
-" ~/.vim/plugged にプラグインを配置される
-"
-" インストール後 に以下のコマンドを command line mode から実行
-" source ~/.config/nvim/init.vim
-" :PlugInstall
-"
-" プラグインの削除の際は
-" Plug 'cat2koban/awesome-plug.vim' を削除して、
-" source ~/.config/nvim/init.vim
-" :PlugClean
+" ---------------------------------------------------------------
+" Basic                                                       {{{
+" ---------------------------------------------------------------
+
+syntax on
+
+" Charset
+set encoding=utf-8
+set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
+set fileformats=unix,dos,mac
+set binary noeol
+
+" Enable delete line by <C-h>
+set backspace=2
+
+set cursorline
+
+" Enable number of line
+set number
+set relativenumber
+
+" Searching
+set hlsearch
+set ignorecase
+set smartcase
+set incsearch
+nnoremap <ESC><ESC> :nohlsearch<CR>
+
+" Tab
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set smarttab
+set showtabline=2
+
+" Indent
+set smartindent
+
+" Enable yanked line to clipboard
+set clipboard+=unnamed
+
+set laststatus=2
+
+" Disable auto create .swp file
+set noswapfile
+
+" Remove white space end of line
+autocmd BufWritePre * :%s/\s\+$//ge
+
+set virtualedit=block
+
+" Enable displaying complemention code when command mode.
+set wildmenu
+
+" Enable using mouse
+set mouse=a
+
+" Set fish terminal when terminal mode
+set sh=fish
+
+inoremap <silent> jj <ESC>
+
+nnoremap <C-H> :tabprevious<CR>
+nnoremap <C-L> :tabnext<CR>
+nnoremap <C-N> :tabnew<CR>
+
+" terminal mode -> command mode
+tnoremap <silent> <ESC> <C-\><C-n>
+
+" Set <Leader>
+let mapleader = "\<Space>"
+
+" Enable saving history for Undo / Redo procedure
+if has('persistent_undo')
+	let undo_path = expand('~/.vim/undo')
+	exe 'set undodir=' . undo_path
+	set undofile
+endif
+" ---------------------------------------------------------------
+" Basic                                                       }}}
+" ---------------------------------------------------------------
+
+
+
+" ---------------------------------------------------------------
+" Plugins                                                     {{{
+" ---------------------------------------------------------------
 
 call plug#begin('~/.vim/plugged')
 
-" 何のプラグインを使うか書いていく
-" display  ----------------------------
+" Display  ----------------------------
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mhinz/vim-startify'
-Plug 'itchyny/calendar.vim'
 
-" markdown ----------------------------
+" Markdown ----------------------------
 Plug 'junegunn/goyo.vim'
 Plug 'previm/previm'
 
-" coding ------------------------------
+" Coding ------------------------------
 Plug 'Yggdroot/indentLine'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
 Plug 'w0rp/ale'
 Plug 'slim-template/vim-slim'
-Plug 'thinca/vim-quickrun'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'tpope/vim-rails'
-Plug 'mattn/webapi-vim'
-Plug 'upamune/esa.vim'
+Plug 'tpope/vim-endwise'
+Plug 'cohama/lexima.vim'
 
-" git ---------------------------------
+" Git ---------------------------------
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-jp/vital.vim'
 
-" fuzzy finder ------------------------
+" Fuzzy finder ------------------------
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'cat2koban/ghlink.vim'
 
 call plug#end()
 
-" ---------------------------------------------------------------
-" >> 基本設定                                                 {{{
-" ---------------------------------------------------------------
 
-"" 文字コード
-set encoding=utf-8
-set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
-set fileformats=unix,dos,mac
-set binary noeol
-"" 行末スペース
-autocmd BufWritePre * :%s/\s\+$//ge
-
-"set list
-"set listchars=tab:␣.,trail:›,extends:>,precedes:<
-
-"" シンタックスを有効に
-syntax on
-autocmd FileType markdown hi! def link markdownItalic Normal
-
-
-"" Ctrl-h で delete
-set backspace=2
-
-
-"" カーソルライン
-set cursorline
-
-
-"" 行番号
-set number
-"""set relativenumber
-
-
-"" 検索
-set hlsearch
-set ignorecase
-set smartcase
-set incsearch
-
-
-"" タブ
-set expandtab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set smarttab
-
-
-" インデント
-set smartindent
-
-
-" Undo / Redo 履歴の保存
-if has('persistent_undo')
-	let undo_path = expand('~/.vim/undo')
-	exe 'set undodir=' . undo_path
-	set undofile
-endif
-
-
-" マッピング / 再帰なし
-inoremap <silent> jj <ESC>
-
-
-" マッピング / 再帰
-nnoremap <ESC><ESC> :nohlsearch<CR>
-nnoremap <C-H> :tabprevious<CR>
-nnoremap <C-L> :tabnext<CR>
-nnoremap <C-N> :tabnew<CR>
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>o :only<CR>
-
-
-" <Leader> の設定
-let mapleader = "\<Space>"
-
-
-" ヤンクしたものをクリップボードに
-set clipboard+=unnamed
-
-
-" タブページ
-set showtabline=2
-
-
-" ステータスライン
-set laststatus=2
-
-
-" .swp を作りたくない
-set noswapfile
-
-
-" 短形選択
-set virtualedit=block
-
-
-" コマンドラインモードでの補完候補表示
-set wildmenu
-
-
-" マウス
-set mouse=a
-
-
-" 行末の空白を削除
-autocmd BufWritePre * :%s/\s\+$//ge
-
-" terminal mode のシェル
-set sh=fish
-
-" terminal mode -> command mode
-tnoremap <silent> <ESC> <C-\><C-n>
-
-" ---------------------------------------------------------------
-" プラグイン固有の設定                                        {{{
-" ---------------------------------------------------------------
 
 
 " ---------------------------------------------------------------
@@ -190,6 +145,9 @@ let g:previm_open_cmd = 'open -a Google\ Chrome'
 " ---------------------------------------------------------------
 " >> coc.nvim
 " ---------------------------------------------------------------
+" Node Path
+let g:coc_node_path = '/Users/taba.noritomo/.local/share/nvm/v14.15.1/bin/node'
+
 " TextEdit might fail if hidden is not set.
 set hidden
 
@@ -263,38 +221,15 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " Using CocList
 " Show all diagnostics
 
-" ---------------------------------------------------------------
-" >> neo-snippet.nvim
-" ---------------------------------------------------------------
-" Plugin key-mappings.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-
 
 " ---------------------------------------------------------------
-" >> startify
+" >> Startify
 " ---------------------------------------------------------------
-" [$ vi ] と fish で入力すると, startify が起動
+" Enable Open Startify when enter `vi` on fish
 " ref: https://github.com/mhinz/vim-startify/blob/master/doc/startify.txt#L309
 let g:startify_session_autoload = 1
 
-" Ctrl + S で :Startify を起動
+" Enable open Startify when <C-S>
 nnoremap <C-s> :Startify<CR>
 
 " ref: http://mewbies.com/acute_terminal_fun_01_get_ascii-fied_on_the_terminal.htm
@@ -335,6 +270,7 @@ let g:ale_set_highlights = 0
 " >> fzf
 " ---------------------------------------------------------------
 nnoremap <C-F> :FZF<CR>
+nnoremap <C-G> :Rg<CR>
 
 
 " ---------------------------------------------------------------
@@ -342,9 +278,19 @@ nnoremap <C-F> :FZF<CR>
 " ---------------------------------------------------------------
 let g:indentLine_fileTypeExclude = ['help', 'nerdtree', 'startify']
 
-
+function! My_mapping()
+  if pumvisible() && complete_info()["selected"] == -1
+    return "\<C-y>\<CR>"
+  elseif pumvisible()
+    return coc#_select_confirm()
+  else
+    return "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+  endif
+endfunction
+let g:endwise_no_mappings = v:true
+inoremap <expr> <Plug>CustomCocCR My_mapping()
+imap <CR> <Plug>CustomCocCR<Plug>DiscretionaryEnd
 
 " ---------------------------------------------------------------
-" プラグイン固有の設定                                        }}}
+" Plugins                                                     }}}
 " ---------------------------------------------------------------
-"
