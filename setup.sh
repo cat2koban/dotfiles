@@ -2,6 +2,8 @@
 
 DIR=`pwd`
 
+# xargs brew install < $DIR/brew_list
+
 ln -vfs $DIR/nvim/init.vim $HOME/.config/nvim/init.vim
 ln -vfs $DIR/fish/config.fish $HOME/.config/fish/config.fish
 # TODO: fish を卒業したい
