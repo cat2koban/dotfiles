@@ -45,8 +45,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-jp/vital.vim'
 
 " fuzzy finder ------------------------
-Plug '/usr/local/opt/fzf'
+"Plug '/usr/local/opt/fzf'
+Plug '/opt/homebrew/bin/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
 Plug 'cat2koban/ghlink.vim'
 
 call plug#end()
@@ -59,7 +62,6 @@ call plug#end()
 set encoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 set fileformats=unix,dos,mac
-set binary noeol
 "" 行末スペース
 autocmd BufWritePre * :%s/\s\+$//ge
 
