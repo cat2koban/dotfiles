@@ -145,7 +145,7 @@ let g:previm_open_cmd = 'open -a Google\ Chrome'
 " >> coc.nvim
 " ---------------------------------------------------------------
 " Node Path
-let g:coc_node_path = '/Users/taba.noritomo/.local/share/nvm/v14.15.1/bin/node'
+let g:coc_node_path = '/Users/cat2koban/.nvm/versions/node/v15.7.0/bin/node'
 
 " TextEdit might fail if hidden is not set.
 set hidden
