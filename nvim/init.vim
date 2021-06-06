@@ -147,6 +147,8 @@ let g:previm_open_cmd = 'open -a Google\ Chrome'
 " Node Path
 let g:coc_node_path = '/Users/cat2koban/.nvm/versions/node/v15.7.0/bin/node'
 
+" Error Message Forground Color
+hi CocErrorFloat ctermfg=black
 " TextEdit might fail if hidden is not set.
 set hidden
 
