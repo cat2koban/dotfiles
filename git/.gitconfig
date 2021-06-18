@@ -42,6 +42,7 @@
                --author=\"$(git config user.name)\" \
                --format=\" - %C(auto)%h%Creset : %s %C(green)(%ad)%Creset\";\
            };f"
+  show-pr = !"f() { git log --merges --oneline --ancestry-path $1...master | grep 'Merge pull request #' | tail -n 1; }; f"
 
 [github]
   user = cat2koban
