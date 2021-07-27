@@ -15,6 +15,8 @@ alias rm='rm -i'
 alias ..='cd ..'
 alias cat='bat'
 alias bar='bat README.md'
+alias ide='sh ~/bin/ide.sh'
+alias exap='sh ~/bin/exap.sh'
 
 ## git
 alias g='git'
