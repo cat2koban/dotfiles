@@ -17,7 +17,6 @@ set cursorline
 
 " Enable number of line
 set number
-set relativenumber
 
 " Searching
 set hlsearch
@@ -73,15 +72,14 @@ let mapleader = "\<Space>"
 
 " Enable saving history for Undo / Redo procedure
 if has('persistent_undo')
-	let undo_path = expand('~/.vim/undo')
-	exe 'set undodir=' . undo_path
-	set undofile
+  let undo_path = expand('~/.vim/undo')
+  exe 'set undodir=' . undo_path
+  set undofile
 endif
-" ---------------------------------------------------------------
-" Basic                                                       }}}
-" ---------------------------------------------------------------
 
-
+" ---------------------------------------------------------------
+" ColorScheme                                                 {{{
+" ---------------------------------------------------------------
 
 " ---------------------------------------------------------------
 " Plugins                                                     {{{
@@ -92,8 +90,6 @@ call plug#begin('~/.vim/plugged')
 " Display  ----------------------------
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mhinz/vim-startify'
 
 " Markdown ----------------------------
@@ -126,14 +122,10 @@ call plug#end()
 
 
 " ---------------------------------------------------------------
-" >> NERDTree
+" >> Coc-explorer
 " ---------------------------------------------------------------
-nnoremap <silent> <C-e> :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1
-let g:NERDTreeIgnore=['\.git$', '\.clean$', '\.swp$', '\.bak$', '\~$']
-let NERDTreeMapOpenInTab='<ENTER>'
-let NERDTreeShowLineNumbers=1
-autocmd FileType nerdtree setlocal relativenumber
+nnoremap <silent> <C-e> :CocCommand explorer<CR>
+
 
 
 " ---------------------------------------------------------------
@@ -276,7 +268,7 @@ nnoremap <C-G> :Rg<CR>
 " ---------------------------------------------------------------
 " >> indentLine
 " ---------------------------------------------------------------
-let g:indentLine_fileTypeExclude = ['help', 'nerdtree', 'startify']
+let g:indentLine_fileTypeExclude = ['help', 'startify']
 
 function! My_mapping()
   if pumvisible() && complete_info()["selected"] == -1
