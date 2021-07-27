@@ -98,6 +98,7 @@ Plug 'mhinz/vim-startify'
 " Markdown ----------------------------
 Plug 'junegunn/goyo.vim'
 Plug 'previm/previm'
+Plug 'godlygeek/tabular'
 
 " Coding ------------------------------
 Plug 'Yggdroot/indentLine'
@@ -115,7 +116,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-jp/vital.vim'
 
 " Fuzzy finder ------------------------
-Plug '/usr/local/opt/fzf'
+Plug '/opt/homebrew/bin/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'cat2koban/ghlink.vim'
 
