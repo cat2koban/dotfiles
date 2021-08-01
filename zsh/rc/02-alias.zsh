@@ -41,3 +41,6 @@ alias be='bundle exec'
 alias bers='be rspec'
 alias berc='be rubocop'
 alias berca='be rubocop -a'
+
+# z
+alias j="z"

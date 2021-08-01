@@ -1,0 +1,1 @@
+. ~/ghq/github.com/rupa/z/z.sh
