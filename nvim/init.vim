@@ -78,10 +78,6 @@ if has('persistent_undo')
 endif
 
 " ---------------------------------------------------------------
-" ColorScheme                                                 {{{
-" ---------------------------------------------------------------
-
-" ---------------------------------------------------------------
 " Plugins                                                     {{{
 " ---------------------------------------------------------------
 
@@ -91,6 +87,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'mhinz/vim-startify'
+Plug 'joshdick/onedark.vim'
 
 " Markdown ----------------------------
 Plug 'junegunn/goyo.vim'
@@ -119,6 +116,14 @@ Plug 'cat2koban/ghlink.vim'
 call plug#end()
 
 
+" ---------------------------------------------------------------
+" ColorScheme                                                 {{{
+" ---------------------------------------------------------------
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+colorscheme onedark
 
 
 " ---------------------------------------------------------------
