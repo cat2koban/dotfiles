@@ -11,7 +11,7 @@ export GO111MODULE=off
 export GOBIN="$GOPATH/bin"
 
 # MySQL
-alias PATH=$PATH:/usr/local/opt/mysql@5.7/bin:$PATH
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -28,3 +28,4 @@ export PATH="$HOME/.yarn/bin:$PATH"
 # Ruby
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
+
