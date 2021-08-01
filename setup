@@ -5,6 +5,7 @@ DIR=`pwd`
 # xargs brew install < $DIR/brew_list
 
 ln -vfs $DIR/nvim/init.vim $HOME/.config/nvim/init.vim
+ln -vfs $DIR/nvim/coc-settings.json $HOME/.config/nvim/coc-settings.json
 ln -vfs $DIR/zsh/.zshrc $HOME/.zshrc
 ln -vfs $DIR/zsh/rc $HOME/
 
