@@ -2,14 +2,25 @@
 
 DIR=`pwd`
 
-# xargs brew install < $DIR/brew_list
+read -p "Install dotfiles? y/n: " yn
+if [ $yn = "y" -o $yn = "Y" ]; then
+  ln -vfs $DIR/.vim/init.vim $HOME/.config/nvim/init.vim
+  ln -vfs $DIR/.vim/coc-settings.json $HOME/.config/nvim/coc-settings.json
+  ln -vfs $DIR/.zsh/.zshrc $HOME/.zshrc
+  ln -vfs $DIR/.zsh/rc $HOME/
 
-ln -vfs $DIR/nvim/init.vim $HOME/.config/nvim/init.vim
-ln -vfs $DIR/nvim/coc-settings.json $HOME/.config/nvim/coc-settings.json
-ln -vfs $DIR/zsh/.zshrc $HOME/.zshrc
-ln -vfs $DIR/zsh/rc $HOME/
+  ln -vfs $DIR/.gitconfig $HOME/.gitconfig
+  ln -vfs $DIR/.tmux.conf $HOME/.tmux.conf
+fi
 
-ln -vfs $DIR/git/.gitconfig $HOME/.gitconfig
-ln -vfs $DIR/tmux/.tmux.conf $HOME/.tmux.conf
+read -p "Install some plugins from brew list? y/n: " yn
+if [ $yn = "y" -o $yn = "Y" ]; then
+  xargs brew install < $DIR/brew_list
+fi
+
+read -p "Install some plugins from brew list? y/n: " yn
+if [ $yn = "y" -o $yn = "Y" ]; then
+  defaults write com.appli.desktopservices DSDontWriteNetworkStores true
+fi
 
 exec $SHELL
