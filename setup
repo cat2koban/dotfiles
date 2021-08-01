@@ -4,23 +4,36 @@ DIR=`pwd`
 
 read -p "Install dotfiles? y/n: " yn
 if [ $yn = "y" -o $yn = "Y" ]; then
+  ln -vfs $DIR/.vim/rc $HOME/.config/nvim/rc
+  ln -vfs $DIR/.vim/vimrc $HOME/.config/nvim/vimrc
   ln -vfs $DIR/.vim/init.vim $HOME/.config/nvim/init.vim
   ln -vfs $DIR/.vim/coc-settings.json $HOME/.config/nvim/coc-settings.json
+
   ln -vfs $DIR/.zsh/.zshrc $HOME/.zshrc
   ln -vfs $DIR/.zsh/rc $HOME/
 
   ln -vfs $DIR/.gitconfig $HOME/.gitconfig
+
   ln -vfs $DIR/.tmux.conf $HOME/.tmux.conf
+  echo "...done!"
 fi
 
+echo ""
 read -p "Install some plugins from brew list? y/n: " yn
 if [ $yn = "y" -o $yn = "Y" ]; then
   xargs brew install < $DIR/brew_list
+  echo "...done!"
 fi
 
-read -p "Install some plugins from brew list? y/n: " yn
+echo ""
+read -p "Never create .DS_Store? y/n: " yn
 if [ $yn = "y" -o $yn = "Y" ]; then
   defaults write com.appli.desktopservices DSDontWriteNetworkStores true
+  echo "...done!"
 fi
 
+echo ""
+echo "Shell restarting ..."
+
 exec $SHELL
+
