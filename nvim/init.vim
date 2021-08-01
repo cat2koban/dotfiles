@@ -94,6 +94,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mhinz/vim-startify'
+Plug 'joshdick/onedark.vim'
 
 " Markdown ----------------------------
 Plug 'junegunn/goyo.vim'
@@ -123,6 +124,12 @@ Plug 'cat2koban/ghlink.vim'
 
 call plug#end()
 
+
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+colorscheme onedark
 
 
 
