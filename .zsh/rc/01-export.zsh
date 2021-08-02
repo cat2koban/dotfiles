@@ -29,3 +29,5 @@ export PATH="$HOME/.yarn/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 
+# direnv
+eval "$(direnv hook zsh)"
