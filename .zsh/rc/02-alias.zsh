@@ -20,9 +20,7 @@ alias vi='nvim'
 alias vim='nvim'
 
 ## configuration
-alias vimconf='vi ~/ghq/github.com/cat2koban/dotfiles/nvim/init.vim'
-alias fishconf='vi ~/ghq/github.com/cat2koban/dotfiles/fish/config.fish'
-alias tmconf='vi ~/ghq/github.com/cat2koban/dotfiles/tmux/.tmux.conf'
+alias vimconf='vi ~/ghq/github.com/cat2koban/dotfiles/.vim/vimrc'
 
 ## dotfiles
 alias dot='cd ~/ghq/github.com/cat2koban/dotfiles/'
