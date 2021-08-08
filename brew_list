@@ -11,11 +11,13 @@ git
 git-delta
 gnu-sed
 gnupg
+goenv
 graphviz
 kubernetes-cli
 mutagen-io/mutagen/mutagen
 mysql@5.7
 neovim
+nodenv
 rbenv
 redis
 ripgrep
