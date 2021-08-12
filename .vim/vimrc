@@ -97,11 +97,13 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-endwise'
 Plug 'cohama/lexima.vim'
+Plug 'nicwest/vim-camelsnek'
 
 " Git ---------------------------------
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-jp/vital.vim'
+Plug 'iberianpig/tig-explorer.vim'
 
 " Fuzzy finder ------------------------
 Plug fzf_command_path
