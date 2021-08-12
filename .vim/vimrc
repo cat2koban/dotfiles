@@ -4,7 +4,6 @@ syntax enable
 set encoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 set fileformats=unix,dos,mac
-set binary noeol
 inoremap <silent> jj <ESC>
 
 " Enable delete line by <C-h>
@@ -71,6 +70,12 @@ endif
 " Plugins                                                     {{{
 " ---------------------------------------------------------------
 
+
+let g:fzf_command_path = system("uname -m") == "arm64" ?
+  \ '/opt/homebrew/fzf' :
+  \ '/usr/local/opt/fzf'
+
+
 call plug#begin('~/.vim/plugged')
 
 " Display  ----------------------------
@@ -99,7 +104,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-jp/vital.vim'
 
 " Fuzzy finder ------------------------
-Plug '/usr/local/opt/fzf'
+Plug fzf_command_path
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'cat2koban/ghlink.vim'
 

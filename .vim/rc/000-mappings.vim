@@ -7,3 +7,5 @@ nnoremap <C-N> :tabnew<CR>
 
 " terminal mode -> command mode
 tnoremap <silent> <ESC> <C-\><C-n>
+
+nnoremap <leader>w :w<CR>

@@ -1,7 +1,12 @@
 UsePlug 'coc.nvim'
 
 " Node Path
-let g:coc_node_path = '/Users/taba.noritomo/.local/share/nvm/v14.15.1/bin/node'
+let g:coc_node_path = system("uname -m") == "arm64" ?
+  \ '/Users/taba.noritomo/.local/share/nvm/v14.15.1/bin/node' :
+  \ '/Users/cat2koban/.nvm/versions/node/v15.7.0/bin/node'
+
+"if
+"let g:coc_node_path = '/Users/taba.noritomo/.local/share/nvm/v14.15.1/bin/node'
 
 " TextEdit might fail if hidden is not set.
 set hidden
