@@ -73,7 +73,7 @@ endif
 
 let g:fzf_command_path = system("uname -m") == "arm64" ?
   \ '/opt/homebrew/fzf' :
-  \ '/usr/local/opt/fzf'
+  \ '/usr/local/bin/fzf'
 
 
 call plug#begin('~/.vim/plugged')
