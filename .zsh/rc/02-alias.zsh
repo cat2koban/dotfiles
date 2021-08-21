@@ -6,6 +6,8 @@ alias cat='bat'
 alias bar='bat README.md'
 alias ide='sh ~/bin/ide.sh'
 alias exap='sh ~/bin/exap.sh'
+alias setup='~/bin/setup'
+alias check='~/bin/check'
 
 ## git
 alias g='git'
