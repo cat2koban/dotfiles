@@ -31,5 +31,3 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 
 # direnv
 eval "$(direnv hook zsh)"
-
-export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l ""'
