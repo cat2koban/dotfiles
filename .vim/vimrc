@@ -96,7 +96,6 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-endwise'
 Plug 'cohama/lexima.vim'
 Plug 'nicwest/vim-camelsnek'
-Plug 'itmammoth/run-rspec.vim'
 
 " Git ---------------------------------
 Plug 'tpope/vim-fugitive'
