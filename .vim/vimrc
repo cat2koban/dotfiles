@@ -117,4 +117,10 @@ function! FindPlugin(name) abort
 endfunction
 command! -nargs=1 UsePlugin if !FindPlugin(<args>) | finish | endif
 
+augroup MyCocExplorer
+  autocmd!
+  autocmd VimEnter * sil! au! FileExplorer *
+  autocmd BufEnter * let d = expand('%') | if isdirectory(d) | silent! bd | exe 'CocCommand explorer ' . d | endif
+augroup END
+
 runtime! rc/*.vim
