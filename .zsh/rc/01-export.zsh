@@ -7,12 +7,12 @@ export PATH="$GOENV_ROOT/bin:$PATH"
 eval "$(goenv init -)"
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
-export GO111MODULE=off
 export GOBIN="$GOPATH/bin"
 
 # MySQL
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
+# Terminal
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LSCOLORS=exfxcxdxbxegedabagacad
