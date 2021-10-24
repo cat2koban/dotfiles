@@ -2,9 +2,7 @@
 export PATH=/opt/homebrew/bin:$PATH
 
 # go
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
-eval "$(goenv init -)"
+export PATH="/usr/local/go/bin:$PATH"
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 export GOBIN="$GOPATH/bin"
