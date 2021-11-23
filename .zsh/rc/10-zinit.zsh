@@ -17,3 +17,4 @@ zinit light trapd00r/LS_COLORS
 
 zinit load zsh-users/zsh-syntax-highlighting
 zinit load zsh-users/zsh-autosuggestions
+zinit load agkozak/zsh-z
