@@ -100,6 +100,8 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-endwise'
 Plug 'cohama/lexima.vim'
 Plug 'nicwest/vim-camelsnek'
+Plug 'tpope/vim-commentary'
+Plug 'junegunn/vim-easy-align'
 
 " Git ---------------------------------
 Plug 'tpope/vim-fugitive'

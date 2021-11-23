@@ -8,6 +8,7 @@ alias ide='sh ~/bin/ide.sh'
 alias exap='sh ~/bin/exap.sh'
 alias setup='~/bin/setup'
 alias check='~/bin/check'
+alias rgl='rg -l'
 
 ## git
 alias g='git'
@@ -16,6 +17,7 @@ alias gif='git diff'
 alias gil='git log --oneline'
 alias gitch='git switch'
 alias todaycommits='git today | pbcopy'
+alias gsp='git show-pr'
 
 ## nvim
 alias vi='nvim'
