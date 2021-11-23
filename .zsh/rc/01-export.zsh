@@ -29,3 +29,6 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 
 # direnv
 eval "$(direnv hook zsh)"
+
+# anyanv
+eval "$(anyenv init -)"
