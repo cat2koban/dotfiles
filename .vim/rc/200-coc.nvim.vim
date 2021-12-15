@@ -1,7 +1,8 @@
 UsePlug 'coc.nvim'
 
 " Node Path
-let g:coc_node_path = '~/.local/share/nvm/v14.15.1/bin/node'
+"let g:coc_node_path = '~/.local/share/nvm/v14.15.1/bin/node'
+let g:coc_node_path = '/Users/taba.noritomo/.anyenv/envs/nodenv/shims/node'
 
 "if
 "let g:coc_node_path = '/Users/taba.noritomo/.local/share/nvm/v14.15.1/bin/node'
