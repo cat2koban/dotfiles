@@ -43,6 +43,7 @@ alias be='bundle exec'
 alias bers='be rspec'
 alias berc='be rubocop'
 alias berca='be rubocop -a'
+alias update='bin/update'
 
 # z
 alias j="z"
