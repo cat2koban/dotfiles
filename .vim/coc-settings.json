@@ -1,4 +1,5 @@
 {
+  "suggest.enablePreselect": true,
   "languageserver": {
     "go": {
       "command": "gopls",
@@ -7,6 +8,9 @@
       "filetypes": ["go"]
     }
   },
+
+  "solargraph.checkGemVersion": false,
+  "solargraph.hover": true,
   "explorer.file.showHiddenFiles": true,
   "explorer.icon.enableNerdfont": true
 }
