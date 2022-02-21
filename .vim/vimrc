@@ -102,6 +102,7 @@ Plug 'cohama/lexima.vim'
 Plug 'nicwest/vim-camelsnek'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/vim-easy-align'
+Plug 'google/vim-jsonnet'
 
 " Git ---------------------------------
 Plug 'tpope/vim-fugitive'
