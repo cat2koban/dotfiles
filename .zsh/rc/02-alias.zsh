@@ -18,6 +18,7 @@ alias gil='git log --oneline'
 alias gitch='git switch'
 alias todaycommits='git today | pbcopy'
 alias gsp='git show-pr'
+alias si='git switch'
 
 ## nvim
 alias vi='nvim'
