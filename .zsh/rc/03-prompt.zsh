@@ -9,4 +9,4 @@ fi
 fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
 prompt pure
-PURE_PROMPT_SYMBOL='%F{green}(%F{red}๑%F{white}°口°%F{red}๑%F{green})%F{white}{ '
+PURE_PROMPT_SYMBOL='%F{green}(%F{red}๑%F{gray}°口°%F{red}๑%F{green})%F{gray}{ '

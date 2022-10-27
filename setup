@@ -4,9 +4,8 @@ DIR=`pwd`
 
 read -p "Install dotfiles? y/n: " yn
 if [ $yn = "y" -o $yn = "Y" ]; then
-  ln -vfs $DIR/.vim/rc $HOME/.config/nvim/
-  ln -vfs $DIR/.vim/vimrc $HOME/.config/nvim/vimrc
-  ln -vfs $DIR/.vim/init.vim $HOME/.config/nvim/init.vim
+  ln -vfs $DIR/.vim/lua $HOME/.config/nvim/
+  ln -vfs $DIR/.vim/init.lua $HOME/.config/nvim/init.lua
   ln -vfs $DIR/.vim/coc-settings.json $HOME/.config/nvim/coc-settings.json
 
   ln -vfs $DIR/.zsh/.zshrc $HOME/.zshrc
