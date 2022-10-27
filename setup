@@ -4,16 +4,14 @@ DIR=`pwd`
 
 read -p "Install dotfiles? y/n: " yn
 if [ $yn = "y" -o $yn = "Y" ]; then
-  ln -vfs $DIR/.vim/lua $HOME/.config/nvim/
-  ln -vfs $DIR/.vim/init.lua $HOME/.config/nvim/init.lua
-  ln -vfs $DIR/.vim/coc-settings.json $HOME/.config/nvim/coc-settings.json
+  ln -vfs $DIR/nvim/init.lua $HOME/.config/nvim/init.lua
 
-  ln -vfs $DIR/.zsh/.zshrc $HOME/.zshrc
-  ln -vfs $DIR/.zsh/rc $HOME/
+  ln -vfs $DIR/zsh/.zshrc $HOME/.zshrc
+  ln -vfs $DIR/zsh/rc $HOME/
 
-  ln -vfs $DIR/.gitconfig $HOME/.gitconfig
+  ln -vfs $DIR/git/.gitconfig $HOME/.gitconfig
 
-  ln -vfs $DIR/.tmux.conf $HOME/.tmux.conf
+  ln -vfs $DIR/tmux/.tmux.conf $HOME/.tmux.conf
   echo "...done!"
 fi
 
