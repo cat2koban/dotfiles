@@ -15,12 +15,12 @@ if [ $yn = "y" -o $yn = "Y" ]; then
   echo "...done!"
 fi
 
-echo ""
-read -p "Install some plugins from brew list? y/n: " yn
-if [ $yn = "y" -o $yn = "Y" ]; then
-  xargs brew install < $DIR/brew_list
-  echo "...done!"
-fi
+#echo ""
+#read -p "Install some plugins from brew list? y/n: " yn
+#if [ $yn = "y" -o $yn = "Y" ]; then
+#  xargs brew install < $DIR/brew_list
+#  echo "...done!"
+#fi
 
 echo ""
 read -p "Never create .DS_Store? y/n: " yn
