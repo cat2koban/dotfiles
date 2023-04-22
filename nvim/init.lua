@@ -58,7 +58,9 @@ vim.keymap.set('i', 'jj', '<Esc>', { silent = true })
 
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
+  use 'olimorris/onedarkpro.nvim'
   use 'cat2koban/ghlink.vim'
+  use 'junegunn/goyo.vim'
   use ({
     'nvim-tree/nvim-tree.lua',
     requires = {
@@ -82,7 +84,6 @@ require('packer').startup(function(use)
   use 'RRethy/nvim-treesitter-endwise'
   use 'tpope/vim-rails'
   use 'tpope/vim-fugitive'
-  use 'olimorris/onedarkpro.nvim'
   use ({
     'romgrk/barbar.nvim',
     requires = 'kyazdani42/nvim-web-devicons'
@@ -335,7 +336,7 @@ vim.keymap.set('n', '<C-e>', ':NvimTreeToggle<CR>', {})
 -- }} nvim-tree
 
 -- onedarkpro: {{
-vim.cmd("colorscheme onedarkpro")
+vim.cmd("colorscheme onedark")
 
 require("onedarkpro").setup({
   dark_theme = "onedark", -- The default dark theme
