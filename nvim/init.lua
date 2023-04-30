@@ -4,8 +4,8 @@ vim.o.wrap = true -- Wrap text lineDelete all strings in Vim with delete button
 vim.o.mouse = 'a' -- Enable mouse action for all mode
 vim.o.number = true -- Print line number
 vim.o.encoding = 'utf-8'
-vim.o.fileencoding = 'utf-8','iso-2022-jp','euc-jp','sjis'
-vim.o.fileformats = 'unix','dos','mac'
+vim.o.fileencoding = 'utf-8'
+vim.o.fileformats = 'mac'
 vim.o.wildmenu = true -- Command line completion in extended mode
 vim.o.hlsearch = true -- Highlight all matching text
 vim.o.incsearch = true -- Make search behave like modern browsers
@@ -54,46 +54,68 @@ vim.keymap.set('n', '<Leader>q', ':q<Return>', {})
 -- Insert
 vim.keymap.set('i', 'jj', '<Esc>', { silent = true })
 
--- vim.cmd [[packadd packer.nvim]]
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
-  use 'olimorris/onedarkpro.nvim'
-  use 'cat2koban/ghlink.vim'
-  use 'junegunn/goyo.vim'
-  use ({
+require('lazy').setup({
+  'wbthomason/packer.nvim',
+  'olimorris/onedarkpro.nvim',
+  'cat2koban/ghlink.vim',
+  'junegunn/goyo.vim',
+  {
     'nvim-tree/nvim-tree.lua',
-    requires = {
+    dependencies = {
       'nvim-tree/nvim-web-devicons',
     }
-  })
-  use ({
+  },
+  {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  })
-  use 'lukas-reineke/indent-blankline.nvim'
-  use ({
+    dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
+  },
+  'lukas-reineke/indent-blankline.nvim',
+  {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.0',
-    requires = { 'nvim-lua/plenary.nvim' }
-  })
-  use ({
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  },
+  {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
-  })
-  use 'RRethy/nvim-treesitter-endwise'
-  use 'tpope/vim-rails'
-  use 'tpope/vim-fugitive'
-  use ({
+  },
+  'RRethy/nvim-treesitter-endwise',
+  'tpope/vim-rails',
+  'tpope/vim-fugitive',
+  {
     'romgrk/barbar.nvim',
-    requires = 'kyazdani42/nvim-web-devicons'
-  })
-  use 'neovim/nvim-lspconfig'
-  use 'williamboman/mason.nvim'
-  use 'williamboman/mason-lspconfig.nvim'
-  use ({
+    dependencies = {
+      'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+      'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+    },
+    init = function() vim.g.barbar_auto_setup = false end,
+    icons = { filetype = { enabled = true } },
+    opts = {
+      -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
+      -- animation = true,
+      -- insert_at_start = true,
+      -- …etc.
+    },
+    version = '^1.0.0', -- optional: only update when a new 1.x version is released
+  },  'neovim/nvim-lspconfig',
+  'williamboman/mason.nvim',
+  'williamboman/mason-lspconfig.nvim',
+  {
     'hrsh7th/nvim-cmp',
-    requires = {
+    dependencies = {
       'saadparwaiz1/cmp_luasnip',
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
@@ -104,10 +126,9 @@ require('packer').startup(function(use)
       'nvim-lua/plenary.nvim', -- required by cmp-git
       'petertriho/cmp-git',
       'hrsh7th/cmp-nvim-lsp-signature-help'
-    }
-  })
-end)
-
+    },
+  },
+})
 -- plugins ><;
 
 -- bufferline: {{
@@ -140,33 +161,27 @@ require('bufferline').setup {
   -- Enable/disable icons
   -- if set to 'numbers', will show buffer index in the tabline
   -- if set to 'both', will show buffer index and icons in the tabline
-  icons = true,
+  icons = {
+    filetype = { enabled = true },
+    left = '▎',
+    separators = {
+      inactive = { left = '▎'},
+    },
+    button = '',
+    pinned = { button = '車'},
+    modified = {
+      pinned = {
+        button =  '●',
+      },
+    },
+  },
 
-  -- If set, the icon color will follow its corresponding buffer
-  -- highlight group. By default, the Buffer*Icon group is linked to the
-  -- Buffer* group (see Highlighting below). Otherwise, it will take its
-  -- default value as defined by devicons.
   icon_custom_colors = false,
 
-  -- Configure icons on the bufferline.
-  icon_separator_active = '▎',
-  icon_separator_inactive = '▎',
-  icon_close_tab = '',
-  icon_close_tab_modified = '●',
-  icon_pinned = '車',
-
-  -- If true, new buffers will be inserted at the start/end of the list.
-  -- Default is to insert after current buffer.
   insert_at_end = false,
   insert_at_start = false,
-
-  -- Sets the maximum padding width with which to surround each tab
   maximum_padding = 1,
-
-  -- Sets the minimum padding width with which to surround each tab
   minimum_padding = 1,
-
-  -- Sets the maximum buffer name length.
   maximum_length = 30,
 
   -- If set, the letters for each buffer in buffer-pick mode will be
@@ -428,7 +443,12 @@ require('mason-lspconfig').setup_handlers({ function(server)
     end,
     capabilities = require('cmp_nvim_lsp').default_capabilities(
       vim.lsp.protocol.make_client_capabilities()
-    )
+    ),
+    settings = {
+       Lua = {
+         diagnostics = { globals = {'vim'} }
+       }
+    },
   }
   require('lspconfig')[server].setup(opt)
 end })
