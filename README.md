@@ -1,7 +1,20 @@
 # dotfiles
 
-TODO: Full Automation...
+## 1. Change Trackpad settings.
+## 2. Install Applications
 
+- [ ] Karabiner
+- [ ] Vivaldi
+- [ ] Raycast
+- [ ] 1password
+    - [ ] Chrome-extension
+- [ ] Iterm
+    - [ ] GitHub SSH Config
+    - [ ] brew
+    - [ ] files
+    - [ ] Color Scheme
+- [ ] yabai
+- [ ] RubyMine
 
 ### Installation
 ```
