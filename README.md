@@ -5,6 +5,7 @@
 
 - [ ] Karabiner
 - [ ] Vivaldi
+- [ ] Logi Options +
 - [ ] Raycast
 - [ ] 1password
     - [ ] Chrome-extension
