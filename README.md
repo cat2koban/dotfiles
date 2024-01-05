@@ -14,6 +14,8 @@
     - [ ] brew
     - [ ] files
     - [ ] Color Scheme
+    - [ ] Install Fonts & Icons
+        -  https://github.com/ryanoasis/nerd-fonts/releases
 - [ ] yabai
 - [ ] RubyMine
 
