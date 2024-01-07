@@ -18,7 +18,7 @@ fi
 echo ""
 read -p "Install some plugins from brew list? y/n: " yn
 if [ $yn = "y" -o $yn = "Y" ]; then
-  xargs brew install < $DIR/Brewfile
+  brew bundle
   echo "...done!"
 fi
 
