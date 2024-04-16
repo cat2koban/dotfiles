@@ -337,16 +337,6 @@ require("nvim-tree").setup({
   sort_by = "case_sensitive",
   view = {
     adaptive_size = true,
-<<<<<<< HEAD
-=======
-    -- mappings = {
-    --   list = {
-    --     { key = "u", action = "dir_up" },
-    --     { key = "l", action = "edit" },
-    --     { key = "<C-e>", action = "close" },
-    --   },
-    -- },
->>>>>>> fadd6a1 (.)
   },
   renderer = {
     group_empty = true,
